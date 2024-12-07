@@ -1,47 +1,37 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue';
+import { onMounted } from 'vue'; // mounted means the component is ready to be used and loaded on the page
+
+const newOrder = ref('');
+const orders = ref(['Elixir of Eternal Luminescence'])
+const addOrder = () => {
+  if (newOrder.value.trim() !== '') {
+    orders.value.push(newOrder.value);
+    newOrder.value = '';
+  }
+}
+
+const deleteOrder = (index) => {
+  orders.value.splice(index, 1);
+}
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <h1>Eisblume's Apothecary Shop</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+  <form @submit.prevent="addOrder">
+    <label for="newOrder">Order</label>
+    <input type="text" id="newOrder" name="newOrder" v-model="newOrder">
+    <button type="submit">Add Order</button>
+  </form>
+
+  <ul>
+    <li v-for="(order, index) in orders" :key="order">
+      <span>
+        {{ order }}
+      </span>
+      <button @click="deleteOrder(index)">Delete</button>
+    </li>
+  </ul>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
