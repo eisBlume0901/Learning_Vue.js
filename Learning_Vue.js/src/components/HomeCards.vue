@@ -15,9 +15,9 @@
        </div>
 
        <div class="bg-sepia p-6 rounded-lg shadow-md">
-         <h2 class="text-2xl font-bold text-white">For Health Practitioners</h2>
+         <h2 class="text-2xl font-bold text-white">For Apothecaries</h2>
          <p class="mt-2 mb-4 text-white">
-           Take your practice to the next level with our premium selection of herbal potions and remedies. Our products are made with the highest quality ingredients to ensure the best results for your clients.
+           List your herbal potions and remedies in our shop. We offer a platform for you to showcase your products and reach a wider audience of herbal enthusiasts.
          </p>
          <a href="" class="inline-block bg-pale-green text-white rounded-lg px-4 py-2 hover:bg-white hover:text-bark">Browse Potions</a>
        </div>
