@@ -9,7 +9,7 @@ export default {
       'bark': '#685752',
     },
     fontFamily: {
-      sans: ['Shippori Antique B1', 'Poppins', 'sans-serif'],
+      libre: ['Libre Baskerville', 'serif'],
     },
     gridTemplateColumns: {
       '70/30': '70% 28%',
